@@ -6,7 +6,9 @@ const lengthData = parseInt(inputEl.dataset.length);
 function onInputBlur() {
   if (inputEl.value.length === lengthData) {
     inputEl.classList.add("valid");
+    inputEl.classList.remove("invalid");
   } else {
     inputEl.classList.add("invalid");
+    inputEl.classList.remove("valid");
   }
 }

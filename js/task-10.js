@@ -11,6 +11,8 @@ const divBoxesEL = document.querySelector("#boxes");
 btnCreateEl.addEventListener("click", createBoxes);
 btnCloseEl.addEventListener("click", destroyBoxes);
 
+const divBoxesarr = [];
+
 let i = 1;
 let width = 30;
 let height = 30;
@@ -21,13 +23,15 @@ function createBoxes() {
     divEl.style.height = `${height}px`;
     divEl.style.backgroundColor = `${getRandomHexColor()}`;
 
-    divBoxesEL.appendChild(divEl);
+    divBoxesarr.push(divEl);
 
     i += 1;
     width += 10;
     height += 10;
   }
+  divBoxesEL.append(...divBoxesarr);
 }
+
 function destroyBoxes() {
   divBoxesEL.innerHTML = "";
   document.location.reload();
